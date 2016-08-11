@@ -4,7 +4,7 @@ $message = false;
 if (isset($_POST['send'])) {
     /* Comprobamos si el nombre de usuario existe */
     $Query = ('SELECT Usuario
-                FROM Usuario
+                FROM usuario
             WHERE Usuario=\''.$_POST['user'].'\'');
     $result = mysqli_query($conn, $Query);
     if (!$result) {
@@ -13,7 +13,7 @@ if (isset($_POST['send'])) {
     $user_exist = mysqli_num_rows($result);
     /* Comprobamos si la cédula existe */
     $Query = ('SELECT Cedula
-                FROM Usuario
+                FROM usuario
             WHERE Cedula=\''.$_POST['cedla'].'\'');
     $result = mysqli_query($conn, $Query);
     if (!$result) {
@@ -30,7 +30,7 @@ if (isset($_POST['send'])) {
         $message = ('adduser-m-02');
     } else {
         /* Se guarda el Usuario */
-        $SQL = ('INSERT INTO Usuario (
+        $SQL = ('INSERT INTO usuario (
                     Usuario,
                     Nombre,
                     Apellido,

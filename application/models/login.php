@@ -8,7 +8,7 @@ if (isset($_POST['send'])) {
     $Query = ('SELECT 
                     Admin, 
                     Password 
-                FROM Administrador 
+                FROM administrador 
                 WHERE Admin=\''.$admin.'\'');
     $Result = mysqli_query($conn, $Query);
     if (!$Result) {

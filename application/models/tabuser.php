@@ -1,7 +1,7 @@
 <?php
 $message = false;
 /* Query a la tabla Usuario */
-$Query = ('SELECT * FROM Usuario');
+$Query = ('SELECT * FROM usuario');
 $Result = mysqli_query($conn, $Query);
 if (!$Result) {
     exit (mysqli_errno($conn) . ": " . mysqli_error($conn));

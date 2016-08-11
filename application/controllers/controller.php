@@ -6,7 +6,7 @@ if (empty($_GET['action'])) { # si get_action está vacío.
     include('application/views/default.php'); # página de entrada (vista).
     vista_footer(); # footer.
 } else { # si get_action trae algún valor (login).
-    require('application/libraries/db_connect.php'); # conexión a la DB.
+    require('lib/db_connect.php'); # conexión a la DB.
     switch ($_GET['action']) {
     /* Administrador Login */
     case 'login':
