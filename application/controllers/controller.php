@@ -6,12 +6,12 @@ if (empty($_GET['action'])) { # si get_action está vacío.
     include('application/views/default.php'); # página de entrada (vista).
     vista_footer(); # footer.
 } else { # si get_action trae algún valor (login).
-    require('lib/db_connect.php'); # conexión a la DB.
+    require('application/libraries/db_connect.php'); # conexión a la DB.
     switch ($_GET['action']) {
     /* Administrador Login */
     case 'login':
         include('application/models/login.php'); # modelo.
-        vista_header('GraniteGlass | Login'); # header.
+        vista_header('Gestion de Proyectos | Login'); # header.
         include('application/views/login.php'); # página de login (vista).
         vista_footer(); # footer.
         include('application/models/messages.php'); # mensajes.
@@ -25,7 +25,7 @@ if (empty($_GET['action'])) { # si get_action está vacío.
     }
 }
 /* Función para generar el header */
-function vista_header($titulo = 'GraniteGlass | Inicio') {
+function vista_header($titulo = 'Gestion de Proyectos | Inicio') {
     $header = file_get_contents('application/views/header.php');
     $header = str_replace('{titulo}', $titulo, $header);
 

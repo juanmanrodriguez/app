@@ -2,8 +2,8 @@
         </div>
       </div>
       <div id="footer">
-        <p class="left">&copy; 2015 LM</p>
-        <p class="right">Template by <a href="http://www.onedollartemplates.com">One Dollar Templates</a></p>
+        <p class="left">&copy; 2016</p>
+        <p class="right">Juan Manuel Rodriguez</p>
       </div>
     </div>
   </body>

@@ -23,5 +23,5 @@
     </ul>
     <div id="container">
       <div id="header">
-        <h1><a href="index.php">Granite<span>Glass</span>Root</a></h1>
+          <h1><a href="index.php">..:: <span>Gesti&oacute;n de Proyectos</span> ::..</a></h1>
       </div>

@@ -6,7 +6,7 @@ if (empty($_GET['action'])) {
     include('application/views/admin/default.php');
     vista_footer();
 } else {
-    require('lib/db_connect.php');
+    require('application/libraries/db_connect.php');
     switch ($_GET['action']) {
         /* Registrar Usuario */
         case 'adduser':
@@ -45,7 +45,15 @@ if (empty($_GET['action'])) {
             include('application/views/admin/tabuser.php');
             vista_footer();
             include('application/models/messages.php');
-        break;
+            break;
+        /* Tabla Proyecto */
+        case 'tabproyect':
+            include('application/models/tabproyect.php');
+            vista_header('Administrador | Tabla Proyecto');
+            include('application/views/admin/tabproyect.php');
+            vista_footer();
+            include('application/models/messages.php');
+            break;
         /* Logout Administrador */
         case 'logout':
             vista_header();
