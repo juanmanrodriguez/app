@@ -10,20 +10,20 @@ if (empty($_GET['action'])) {
     switch ($_GET['action']) {
         /* Registrar Usuario */
         case 'adduser':
-            include('application/models/adduser.php');
+            include('application/models/user/adduser.php');
             vista_header('Administrador | Registrar Usuario');
-            include('application/views/admin/adduser.php');
+            include('application/views/admin/user/adduser.php');
             vista_footer();
             include('application/models/messages.php');
         break;
         /* Actualizar Usuario */
         case 'upduser':
-            include('application/models/upduser.php');
+            include('application/models/user/upduser.php');
             vista_header('Administrador | Actualizar Usuario');
             if (empty($Row)) {
-                include('application/views/admin/upduser.php');
+                include('application/views/admin/user/upduser.php');
             } else {
-                $form = file_get_contents('application/views/admin/upduser2.php');
+                $form = file_get_contents('application/views/admin/user/upduser2.php');
                 $form = str_replace('{iduser}', $Row['ID_USER'], $form);
                 $form = str_replace('{userdb}', $Row['Usuario'], $form);
                 $form = str_replace('{cedladb}', $Row['Cedula'], $form);
@@ -40,17 +40,9 @@ if (empty($_GET['action'])) {
         break;
         /* Tabla Usuario */
         case 'tabuser':
-            include('application/models/tabuser.php');
+            include('application/models/user/tabuser.php');
             vista_header('Administrador | Tabla Usuario');
-            include('application/views/admin/tabuser.php');
-            vista_footer();
-            include('application/models/messages.php');
-            break;
-        /* Tabla Proyecto */
-        case 'tabproyect':
-            include('application/models/tabproyect.php');
-            vista_header('Administrador | Tabla Proyecto');
-            include('application/views/admin/tabproyect.php');
+            include('application/views/admin/user/tabuser.php');
             vista_footer();
             include('application/models/messages.php');
             break;
@@ -60,6 +52,87 @@ if (empty($_GET['action'])) {
             include('application/models/logout.php');
             vista_footer();
         break;
+
+        /* Tabla Proyecto */
+        case 'tabproyect':
+            include('application/models/proyect/tabproyect.php');
+            vista_header('Administrador | Tabla Proyecto');
+            include('application/views/admin/proyect/tabproyect.php');
+            vista_footer();
+            include('application/models/messages.php');
+            break;
+        /* Administrar Proyecto */
+        case 'manageproyect':
+            vista_header('Administrador | Administrar Proyecto');
+            include('application/views/admin/proyect/manageproyect.php');
+            vista_footer();
+            include('application/models/messages.php');
+            break;
+        /* Registrar Proyecto */
+        case 'addproyect':
+            include('application/models/proyect/addproyect.php');
+            vista_header('Administrador | Registrar Proyecto');
+            include('application/views/admin/proyect/addproyect.php');
+            vista_footer();
+            include('application/models/messages.php');
+        break;
+        /* Actualizar Proyecto */
+        case 'updproyect':
+            include('application/models/proyect/updproyect.php');
+            vista_header('Administrador | Actualizar Usuario');
+            if (empty($Row)) {
+                include('application/views/admin/proyect/updproyect.php');
+            } else {
+                $form = file_get_contents('application/views/admin/proyect/updproyect2.php');
+                $form = str_replace('{iduser}', $Row['ID_PROY'], $form);
+                $form = str_replace('{user}', $Row['nombre'], $form);
+                $form = str_replace('{email}', $Row['estado'], $form);
+                echo $form;
+            }
+            vista_footer();
+            include('application/models/messages.php');
+        break;
+        
+        /* Tabla Tarea */
+        case 'tabtask':
+            include('application/models/task/tabtask.php');
+            vista_header('Administrador | Tabla Tarea');
+            include('application/views/admin/task/tabtask.php');
+            vista_footer();
+            include('application/models/messages.php');
+            break;
+        /* Administrar Tarea */
+        case 'managetask':
+            vista_header('Administrador | Administrar Tarea');
+            include('application/views/admin/task/managetask.php');
+            vista_footer();
+            include('application/models/messages.php');
+            break;
+        /* Registrar Tarea */
+        case 'addproyect':
+            include('application/models/task/addtask.php');
+            vista_header('Administrador | Registrar Proyecto');
+            include('application/views/admin/task/addtask.php');
+            vista_footer();
+            include('application/models/messages.php');
+        break;
+        /* Actualizar Tarea */
+        case 'updproyect':
+            include('application/models/task/updtask.php');
+            vista_header('Administrador | Actualizar Usuario');
+            if (empty($Row)) {
+                include('application/views/admin/task/updtask.php');
+            } else {
+                $form = file_get_contents('application/views/admin/task/updtask2.php');
+                $form = str_replace('{iduser}', $Row['ID_PROY'], $form);
+                $form = str_replace('{user}', $Row['nombre'], $form);
+                $form = str_replace('{email}', $Row['estado'], $form);
+                echo $form;
+            }
+            vista_footer();
+            include('application/models/messages.php');
+        break;
+
         /* Si la página no existe */
         default:
             vista_header('ERROR 404');
