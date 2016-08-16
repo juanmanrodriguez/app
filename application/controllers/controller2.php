@@ -109,7 +109,7 @@ if (empty($_GET['action'])) {
             include('application/models/messages.php');
             break;
         /* Registrar Tarea */
-        case 'addproyect':
+        case 'addtask':
             include('application/models/task/addtask.php');
             vista_header('Administrador | Registrar Proyecto');
             include('application/views/admin/task/addtask.php');
@@ -117,7 +117,7 @@ if (empty($_GET['action'])) {
             include('application/models/messages.php');
         break;
         /* Actualizar Tarea */
-        case 'updproyect':
+        case 'updtask':
             include('application/models/task/updtask.php');
             vista_header('Administrador | Actualizar Usuario');
             if (empty($Row)) {

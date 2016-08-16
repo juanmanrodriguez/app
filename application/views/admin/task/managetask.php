@@ -2,9 +2,9 @@
         <ul id="nav">
           <li><a href="index.php">Inicio</a></li>
           <li class="on first"><a href="index.php">Admin. tareas</a></li>
-          <li><a href="index.php?action=managetask">Agregar tarea</a></li>
-          <li><a href="index.php?action=managetask">Actualizar tarea</a></li>
-          <li><a href="index.php?action=managetask">Mostrar tareas</a></li>
+          <li><a href="index.php?action=addtask">Agregar tarea</a></li>
+          <li><a href="index.php?action=udptask">Actualizar tarea</a></li>
+          <li><a href="index.php?action=tabtask">Mostrar tareas</a></li>
         </ul>
         <div id="content">
           <div>
